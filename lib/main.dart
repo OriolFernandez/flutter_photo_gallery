@@ -14,21 +14,18 @@ class MyApp extends StatelessWidget {
       home: Material(
         child: Center(
           child: Builder(builder: (context) {
-            return RaisedButton(
-              onPressed: () async {
-                // ### Add the next 2 lines ###
-                final permitted = await PhotoManager.requestPermission();
-                if (!permitted) return;
-                // ######
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => Gallery()),
-                );
-              },
-              child: Text('Open Gallery'),
-            );
+            askForPermission(context);
+            return Text('Open Gallery');
           }),
         ),
       ),
+    );
+  }
+
+  void askForPermission(BuildContext context) async {
+    await PhotoManager.requestPermission();
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => Gallery()),
     );
   }
 }
