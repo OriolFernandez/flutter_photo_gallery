@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
-import 'package:photo_manager_demo/widgets/gallery.dart';
+import 'package:photo_manager_demo/pages/gallery.dart';
 
 void main() {
   runApp(MyApp());
