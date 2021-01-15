@@ -5,8 +5,9 @@ A demo for photo_manager plugin
 https://dev.to/aouahib/build-a-flutter-gallery-to-display-all-the-photos-and-videos-in-your-phone-pb6
 
 ## TODO
+handle back button
 
-get rid of first page and ask for permission in the gallery
+show back arrow in video screen
 
 test if pictures can be zoomed
 
