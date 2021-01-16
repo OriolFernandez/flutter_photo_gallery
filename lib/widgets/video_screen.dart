@@ -42,39 +42,44 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
       child: initialized
           // If the video is initialized, display it
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(
-                  child: AspectRatio(
-                    aspectRatio: _controller.value.aspectRatio,
-                    // Use the VideoPlayer widget to display the video.
-                    child: VideoPlayer(_controller),
+                Expanded(
+                  child: Center(
+                    child: AspectRatio(
+                      aspectRatio: _controller.value.aspectRatio,
+                      // Use the VideoPlayer widget to display the video.
+                      child: VideoPlayer(_controller),
+                    ),
                   ),
                 ),
-                FloatingActionButton(
-                  onPressed: () {
-                    // Wrap the play or pause in a call to `setState`. This ensures the
-                    // correct icon is shown.
-                    setState(() {
-                      // If the video is playing, pause it.
-                      if (_controller.value.isPlaying) {
-                        _controller.pause();
-                      } else {
-                        // If the video is paused, play it.
-                        _controller.play();
-                      }
-                    });
-                  },
-                  // Display the correct icon depending on the state of the player.
-                  child: Icon(
-                    _controller.value.isPlaying
-                        ? Icons.pause
-                        : Icons.play_arrow,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      // Wrap the play or pause in a call to `setState`. This ensures the
+                      // correct icon is shown.
+                      setState(() {
+                        // If the video is playing, pause it.
+                        if (_controller.value.isPlaying) {
+                          _controller.pause();
+                        } else {
+                          // If the video is paused, play it.
+                          _controller.play();
+                        }
+                      });
+                    },
+                    // Display the correct icon depending on the state of the player.
+                    child: Icon(
+                      _controller.value.isPlaying
+                          ? Icons.pause
+                          : Icons.play_arrow,
+                    ),
                   ),
                 ),
               ],

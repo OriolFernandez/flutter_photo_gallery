@@ -2,7 +2,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:photo_manager_demo/pages/image_page.dart';
-import 'package:photo_manager_demo/widgets/video_screen.dart';
+import 'package:photo_manager_demo/pages/video_page.dart';
 
 class AssetThumbnail extends StatelessWidget {
   const AssetThumbnail({
@@ -38,7 +38,7 @@ class AssetThumbnail extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => VideoScreen(videoFile: asset.file)),
+                      builder: (context) => VideoPage(videoFile: asset.file)),
                 );
                 break;
               case AssetType.audio:

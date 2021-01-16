@@ -7,7 +7,6 @@ https://dev.to/aouahib/build-a-flutter-gallery-to-display-all-the-photos-and-vid
 ## TODO
 handle back button
 
-show back arrow in video screen
 
 test if pictures can be zoomed
 
